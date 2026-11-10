@@ -1,0 +1,11 @@
+[Unit]
+Description=Jobs beside the fcitx5-slm-ime conversion server (slm-ime-companion)
+
+[Service]
+Nice=19
+ExecStart=%h/.sdkman/candidates/java/current/bin/java -Xmx256m -jar %h/.local/lib/slm-ime-companion/slm-ime-companion.jar
+Restart=on-failure
+RestartSec=60
+
+[Install]
+WantedBy=default.target

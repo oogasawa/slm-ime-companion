@@ -1,0 +1,12 @@
+# ~/.config/slm-ime-companion/companion.properties
+# The plugins to run; a plugin that is found but not named here does not run.
+plugins=chat-ui-feed,history-review
+
+# chat-ui-feed: the texts of the chat-ui conversation logs into the inbox of the predictions
+chat-ui-feed.schedule=every 60m
+#chat-ui-feed.logs=~/works
+
+# history-review: the slips of the user history, judged by a local LLM, handed to the server to forget
+history-review.schedule=daily 03:30
+history-review.url=http://127.0.0.1:8000/v1/chat/completions
+history-review.model=your-model-name
